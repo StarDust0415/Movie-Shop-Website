@@ -1,0 +1,12 @@
+/*login begin*/
+#rightbox {
+  border-left: 1px solid lightgrey;
+  /*--media quiries--*/
+  @media (max-width: 992px) {
+    border-top: 1px solid lightgrey;
+    border-left: none;
+  }
+}
+/*login end*/
+
+

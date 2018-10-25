@@ -1,0 +1,63 @@
+
+<div style="font-family: 'Poiret One', cursive;">
+    <div class="modal-header">
+        <h3 class="modal-title">Login or Sign Up</h3>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')" style="font-size:26pt">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h4>Existing Users</h4>
+                    <div class="form-group row mt-3">
+                        <label for="username-input" class="col-2 col-form-label">Username:</label>
+                        <div class="col-8 ml-auto">
+                            <input class="form-control" type="text" placeholder="Username" id="username-input" [(ngModel)]="inputUser">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password-input" class="col-2 col-form-label">Password:</label>
+                        <div class="col-8 ml-auto">
+                            <input class="form-control" type="password" placeholder="Password" id="password-input" [(ngModel)]="inputPassword">
+                            <label id="loginError" style="color:red"></label>
+                        </div>
+                    </div>
+                    <div class="d-block">
+                        <button class="btn btn-success my-3" style="margin-left:78%" (click)="confirm(inputUser,inputPassword)">Login</button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6" id="rightbox">
+                    <h4 class="mt-1">New Users</h4>
+                    <div class="form-group row mt-3">
+                        <label for="username-input" class="col-2 col-form-label">Username:*</label>
+                        <div class="col-8 ml-auto">
+                            <input class="form-control" [(ngModel)]="inputUser1" type="text" placeholder="Username" id="username-input1">
+                            <label style="color:red;" id="usernameError"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password-input" class="col-2 col-form-label">Password:*</label>
+                        <div class="col-8 ml-auto">
+                            <input class="form-control" [(ngModel)]="inputPassword1" type="password" placeholder="Password" id="password-input1" name="inputPassword1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Confirm Password:*</label>
+                        <div class="col-8 ml-auto">
+                            <input class="form-control mt-2" [(ngModel)]="inputPassword2" type="password" placeholder="Comfirm password" id="repassword-input" name="inputPassword2">
+                            <label style="color:red;" id="pwdError"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="emailaddress-input" class="col-2 col-form-label">Email Address:*</label>
+                        <div class="col-8 ml-auto">
+                            <input class="form-control mt-2" type="email" [(ngModel)]="userEmail" placeholder="Email address" id="emailaddress-input">
+                            <label style="color:red;" id="emailError"></label>
+                        </div>
+                    </div>
+                    <button class="btn btn-success my-3" style="margin-left:78%" (click)="SignUP(inputUser1,inputPassword1,inputPassword2,userEmail)">Sign Up </button>
+                </div>
+            </div>
+            

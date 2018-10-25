@@ -1,0 +1,26 @@
+
+
+
+<!-- 做一个card div 里面分别有name price description -->
+
+
+
+
+<!-- 测试用 -->
+<div class="card border"  id="box">
+  <div class="card-block">
+    <a class="productname btn btn-default card-text" routerLink="[/productdetail,{{product._id}}]" routerLinkActive="active">
+      <img class="card-img-top" src={{product.imgUrl}} alt="productimage"></a>
+    <div class="card-body">
+      <p class="productname card-text">{{product.productname}}</p>
+      <div class="d-flex">
+        <h3 class="price">{{"$"+product.price}}</h3>
+        <div class="ml-auto">
+          <button class="btn btn-success">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

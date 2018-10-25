@@ -1,0 +1,72 @@
+// Sizes
+$large: modular-scale(4);
+$medium: modular-scale(1);
+$small: modular-scale(0);
+$tiny: modular-scale(-1);
+// Colours
+$black: rgb(74, 74, 74);
+$lightgrey: rgba(155, 155, 155, 0.3);
+$grey: rgb(155, 155, 155);
+$headergrey: #F9F9F9;
+$white: #fff;
+$link: #0084cd;
+$base-border-color: #DDD;
+$progress-green: #55A537;
+$red: #D20606;
+$darkgrey: #555;
+//banner
+.home-banner {
+    max-width: none;
+}
+
+.banner {
+    // @include span-columns(12);
+    background: url('/assets/images/banner.jpg') no-repeat;
+    height: 180px;
+    text-align: center;
+    background-size: cover;
+    display: table;
+    h1 {
+        color: rgba(255, 255, 255, 0.89);
+        font-size: 4em;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+//featured-products
+#featureditems {
+    
+    color: rgb(59, 53, 53);
+    font-size: 20pt;
+    margin: 0 10px 0 10px;
+    h1 {
+        margin: 1em 0 1em 0;
+    }
+}
+
+.featured-product {
+    
+    // display: inline;
+    margin-bottom: 1em;
+    img {
+        width: 100%;
+        border: 1px solid $lightgrey;
+        &:hover {
+            border-color: $grey;
+            opacity: 0.9;
+        }
+    }
+}
+
+.productname {
+    font-family: 'Poiret One', cursive;
+    color: rgb(105, 107, 226);
+    font-size: 20pt;
+    margin-left: -10px;
+}
+
+.row img {
+    width: 100%;
+    height: 100%;
+}

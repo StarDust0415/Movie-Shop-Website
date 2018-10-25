@@ -1,0 +1,75 @@
+ 
+
+<nav aria-label="breadcrumb" role="navigation" class="mt-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="../productlist" routerLinkActive="active">Shop</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{specificProduct.productname}}</li>
+        </ol>
+      </nav>
+
+
+<div class="row" id="">
+    <div class="col-6">
+    <img class="img-fluid my-4" id="productpic" src={{specificProduct.imgUrl}} alt="productpic">
+</div>
+
+<form class="col-6 my-4">
+        <!-- 产品名 -->
+        <ul>{{specificProduct.productname}}</ul>
+        <!-- 价格 -->
+        <ul>Price: {{"$"+specificProduct.price}}</ul>
+        <!-- 数量 -->
+        <ul id="quantitycout">
+            <div>
+            Quantity:
+            </div>
+            <div class="input-group py-2">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-light btn-number"  data-type="minus" data-field="quant[2]" (click)="decrease()">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+            </span>
+            <input type="text" name="quant[2]" class="form-control input-number" [(ngModel)]="quantity" min="1" max="999" size="1">
+            <span class="input-group-btn">
+                <button type="button" (click)="increase()" class="btn btn-light btn-number" data-type="plus" data-field="quant[2]">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </span>
+
+            <span>
+                <div class="ml-auto d.inline" style="padding-left:40%">
+                        <button class="btn btn-success" (click)="commit()">Add to cart</button>
+                </div>
+            </span>
+        </div>
+
+        </ul>
+        <ul>
+            Description:{{specificProduct.productDescription}}
+        </ul>
+</form>
+
+<div class="col-12 py-4">
+<a href=""><<<<<<< HEAD</a>
+    <hr>
+    Overall Rating<br>
+    <ngb-rating [readonly]="true" [rate]="calculate()" max="5"></ngb-rating>
+    <ng-container class="card-desk">
+      <div class="card" *ngFor="let comment of specificProduct.comments">
+
+        Rate :<ngb-rating [readonly]="true" [rate]="comment.rate" max="5"></ngb-rating>
+        <p class="card-title">{{"Author: "+comment.name}}</p>
+        <p class="card-text">{{"Comment: "+comment.content}}</p>
+      </div>
+    </ng-container>
+
+</div>
+<div class="col-12" *ngIf="bought()">
+    <form action="/">
+    <!--<ul>Customer Name:<input type="text" size="15"></ul>-->
+      <ngb-rating [(rate)]="currentRate" max="5" ></ngb-rating>
+      <ul><textarea class="col-8" placeholder="Your comment..." name="content" [(ngModel)]="commentcontent"></textarea></ul>
+      <ul>    <button class="btn btn-success" (click)="confirm(currentRate,commentcontent)">Submit</button></ul>
+    </form>
+</div>

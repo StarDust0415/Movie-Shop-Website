@@ -1,0 +1,28 @@
+
+<div class="d-flex mt-3">
+  <a routerLink="../" routerLinkActive="active">Home</a><p>&nbsp;>&nbsp;</p>
+  <span>Shop</span><p>&nbsp;>&nbsp;</p>
+  <span>Order History</span>
+</div>
+
+<div class="itemcard my-4" *ngFor="let order of orders;let i=index" (click)="search(i)">
+  <div class="card-header d-flex d-inline">
+    <h5>Order Number:{{order._id}}</h5>
+    <h5 class="ml-auto">{{"Order Status:"+order.status}}</h5>
+  </div>
+  <div class="row" *ngFor="let product of order.orderProduct">
+    <div class="square col-3" id="itempicbox">
+      <span><img class="itempic img-fluid m-4" src={{product.imgURL}}></span>
+    </div>
+    <div class="col-3 d-flex align-items-center justify-content-center" id="itemnamebox">
+      <!-- <h3 class="itemname">{{product.productname}}</h3> -->
+      <span><h4>{{product.name}}</h4></span>
+    </div>
+    <div class="col-3 my-auto" id="itemquantitybox">
+      <h4>{{"Qty:"+product.quantity}}</h4>
+    </div>
+    <div class="col-3 d-flex align-items-center justify-content-center" id="itempricebox">
+      <h4 class="itemprice">{{"$"+product.price}}</h4>
+    </div>
+  </div>
+</div>

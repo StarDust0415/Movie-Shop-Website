@@ -1,0 +1,41 @@
+// View order 测试用
+#itempicbox {
+    overflow: hidden;/*hidden overflow*/
+}
+#itemquantitybox {
+    padding-left:6%;
+    padding-right:6%;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+  }
+
+.itemcard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	&:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+}
+.fa {
+    font-size:1.5em;
+}
+
+// Checkout测试用
+.orderinfo{
+    border-right: 1px solid lightgrey;
+    @media (max-width: 992px) {
+        border-bottom: 1px solid lightgrey;
+        border-right: none;
+    }
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	&:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+}

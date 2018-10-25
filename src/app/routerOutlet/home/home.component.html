@@ -1,0 +1,115 @@
+<!-- Carousel window -->
+
+<ngb-carousel class="mt-3" style="font-family: 'Pacifico', cursive;">
+    <ng-template ngbSlide>
+        <a routerLink="/productlist" routerLinkActive="active"><img class="img-fluid w-100" src="../../../assets/images/Coco.jpg" alt="coco"></a>
+        <div class="carousel-caption">
+            <h2>The real death is that no one in the world remembers you.</h2>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <a routerLink="/productlist" routerLinkActive="active"><img class="img-fluid w-100" src="../../../assets/images/Interstellar.jpg" alt="interstellar"></a>
+        <div class="carousel-caption">
+            <h2>We used to look up in the sky and wonder at our place in the star.</h2>
+
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <a routerLink="/productlist" routerLinkActive="active"><img class="img-fluid w-100" src="../../../assets/images/SpiderMan.jpg" alt="spiderman"></a>
+        <div class="carousel-caption">
+            <h2>With great power comes with great responsibility.</h2>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<!-- banner -->
+
+<section class="home-banner mt-5">
+    <!-- <img class="home-banner" src="https://lorempixel.com/900/500?r=6"> -->
+    <div class="banner w-100">
+        <h1 style="font-family: 'Pacifico', cursive;">More Movies, More Fun</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <br>
+            <div class="col-sm" style="text-align: center;">
+                <h2>Recommend</h2>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">Drama</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu1">Crime</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">Romance</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="home" class="container-fluid tab-pane active">
+                <br>
+                <div class="container-fluid">
+                    <!-- 最小单元 -->
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="../../../assets/images/professional.jpg" class="img-thumbnail img-fluid" alt="Movie1">
+                        </div>
+                        <div class="col-sm-8">
+                            <p> a 12-year-old girl, is reluctantly taken in by Léon, a professional assassin, after her family is murdered. Léon and Mathilda form an unusual relationship, as she becomes his protégée and learns the assassin's trade.</p>
+                        </div>
+                    </div>
+                    <!-- 最小单元 -->
+                </div>
+            </div>
+            <div id="menu1" class="container-fluid tab-pane fade">
+                <br>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>Luc Besson spent the first years of his life following his parents, scuba diving instructors, around the world. His early life was entirely aquatic. He already showed amazing creativity as a youth, writing early drafts of The
+                                Big Blue (1988) and The Fifth Element (1997), as an adolescent bored in school. He planned on becoming a marine biologist specializing in dolphins until a diving accident at age 17 which rendered him unable to dive any
+                                longer. He moved back to Paris, where he was born, and only at age 18 did he first have an urban life or television. He realized that film was a medium which he could combine all his interests in various arts together,
+                                so he began taking odd jobs on various films. He moved to America for three years, then returned to France and formed Les Films de Loups - his own production company, which later changed its name to Les Films de Dauphins.
+                                He is now able to dive again.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="../../../assets/images/Luc Besson.jpg" class="img-thumbnail img-fluid" alt="Movie2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu2" class="container-fluid tab-pane fade">
+                <br>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="../../../assets/images/atonemen.jpg" class="img-thumbnail" alt="Movie3" width="255" height="255">
+                        </div>
+                        <div class="col-sm-8">
+                            <p> imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Featured items by using Card component -->
+<section>
+    <h3 class="mt-5 text-center" style="color:rgb(3, 3, 3)">Check these out:</h3>
+    <div class="row justify-content-center my-4 " *ngFor="let product of products" style="width:31%;display:inline-block;margin:1%;">
+        <app-product-display (click)="getDetail(product._id)" class="col-xl-4 col-lg-6 col-sm-6 col-xs-12 my-2" [product]="product"></app-product-display>
+    </div>
+

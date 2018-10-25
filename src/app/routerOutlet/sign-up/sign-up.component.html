@@ -1,0 +1,23 @@
+
+<br>
+username<br><input [(ngModel)]="inputUser"><br>
+password<br><input [(ngModel)]="inputPassword">
+<select [(ngModel)]="type">
+  <option value="">Please Select</option>
+  <option *ngFor="let type of types" [value]='type'>{{type}}</option>
+</select>
+<input *ngIf="type==='Salesman'" [ngModel]="shopName">
+<br><button (click)="confirm(inputUser,inputPassword)">Commit</button>
+
+
+<!-- View Order测试用 -->
+
+<nav aria-label="breadcrumb" role="navigation" class="mt-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="../productlist" routerLinkActive="active">Shop</a></li>
+          <li class="breadcrumb-item active" aria-current="page">View Order</li>
+        </ol>
+      </nav>
+
+
